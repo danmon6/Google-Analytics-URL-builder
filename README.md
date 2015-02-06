@@ -1,2 +1,2 @@
-# Google-Analytics-URL-builder
-Single page app to correctly tag campaigns according to Google Analytics
+# URL-Builder
+Web app to tag landing page URLs with correct campaign parameters

@@ -1,0 +1,475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+		<meta http-equiv="Content-type" content="text/html" />
+		<title>Tool: URL Builder</title>
+		<!--<link rel="stylesheet" type="text/css" href="http://www.google.com/support/analytics/bin/resource/all.css?v=191_" />-->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!--<script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=vingresor&apiKey=R_3bab3ab2dcdf312fca00ec1058ffea00"></script>-->
+		<!--<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+		
+		<!-- READ!!! For each market unit change the login and apiKey to bit.ly and the userurl to the corresponing partnerredirect page. -->
+	</head>
+	<body dir="ltr" class="answer_page ltr lang_en show_modules show_leftnav chrome1 chrome winxp win new-ui ">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+		
+			<table border="0" cellpadding="20" cellspacing="0" > 
+				<tbody>
+					<tr>
+						<td width="882" height="271" valign="top">
+							<H1>Campaign Tracking URL Builder</H1>
+							<p>Fill in the form and click the <strong>Generate URL</strong> button below. This tool creates tagged links that enable traffic tracking in Google Analytics (GA).URL-builder is supported in IE9+ and Chrome.</p> 							
+							<form name="chosemu" class="form-horizontal">
+								<legend>Step 1: Enter market unit.</legend>
+							
+								<div class="control-group">
+									<label class="control-label" for="mu">Market Unit <i class="icon-asterisk"></i></label>
+									<div class="controls">
+										<select id="mu" name="mu" size="1">
+											<option value="">Choose a market unit</option>
+											
+											<option value="mu1.dk">mu1.dk</option>
+											<option value="mu2.fi">mu2.fi</option>
+											
+										</select>
+										<span id="help-mu" class="label label-warning">Required!</span>
+									</div>
+								</div>
+							</form>
+							<form id="ctm" class="form-horizontal" name="ctm">
+									<legend>Step 2: Enter the URL of your landing page.</legend>
+									<div class="control-group">
+										<label class="control-label" for="website">Landing page URL <i class="icon-asterisk"></i></label>
+										<div class="controls">
+											<input name="website" class="input-xxlarge" type="text">
+											<span id="help-website" class="label label-warning">Required!</span>
+											<span class="help-block">example: http://www.ving.se/vinter2010</span>
+										
+										</div>
+									</div>
+									
+									<legend>Step 3: Fill in the campaign tracking fields below</legend>
+									
+									<div class="control-group">
+										<label class="control-label" for="utm_medium">Medium <i class="icon-asterisk"></i></label>
+										<div class="controls">
+											<select id="utm_medium" name="utm_medium" size="1"> <!--onchange="showHideTerms(this, 'cgTerm');">-->
+												 <option value="">Choose a medium</option>
+												 <option value="affiliate">affiliate</option>
+												 <option value="content">content</option>
+												 <option value="display">display</option>
+												 <option value="email">email</option>
+												 <option value="partnership">partnership (ICA/COOP)</option>
+												 <option value="retargeting">retargeting</option>
+												 <option value="sem">search engine marketing (adWords)</option>
+												 <option value="social-media">social media</option>
+											</select>
+											<span id="help-medium" class="label label-warning">Required!</span>
+											<span class="help-block">(Marketing medium: newsletter, banner, SEM, social media, etc.)</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="utm_source">Source <i class="icon-asterisk"></i></label>
+										<div class="controls">
+											<input id="utm_source_text" name="utm_source" size="50" type="text">
+											<select id="utm_source_select" name="utm_source_hide" size="1">
+												 <option value="">Choose a source</option>
+											</select>
+											<span id="help-source" class="label label-warning">Required!</span>
+											<span class="help-block">(Referrer: google.se, newsletter, aftonbladet.se, facebook.com)</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="utm_campaign">Campaign <i class="icon-asterisk"></i></label>
+										<div class="controls">
+											<input name="utm_campaign" size="50" type="text">
+											<span id="help-campaign" class="label label-warning">Required!</span>
+											<span class="help-block">(Product, promo, or slogan, <em>e.g. Happy hour week 35</em>)</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="utm_content">Content <!--<i class="icon-asterisk"></i>--></label>
+										<div class="controls">
+											<input name="utm_content" size="50" type="text">
+											<span id="help-content" class="label label-warning">Required!</span>
+											<span class="help-block">(Content description for the ad / link.)</span>
+										</div>
+									</div>
+									<div class="control-group" id="cgTerm" style="display:none">
+										<label class="control-label" for="utm_term">Term </i></label>
+										<div class="controls">
+											<input name="utm_term" size="50" type="text">
+											<span id="help-term" class="label label-warning">Required!</span>
+											<span class="help-block">(Identify the paid keywords, if any)</span>
+										</div>
+									</div>
+									
+								<legend>Step 4: Generate long or short URL or clear the form.</legend>
+									  
+										<div>
+											<input id="generateurl" value="Generate URL" type="button" class="btn btn-primary"> 
+											<input id="shorturl" value="Short URL (bit.ly)" type="button" class="btn btn-primary"> 
+											<input id="copybutton"  value="Copy (IE only)" type="button"  class="btn btn-info">
+											<input id="testlinkbutton" value="Test link" type="button" class="btn btn-info"> 
+											<input id="clearform" value="Clear form" type="button" class="btn btn-danger">
+										</div>
+										
+									  <!--<span id="resultspan" name="result" style="background-color: #DDDDDD"></span>-->
+									  <div></div>
+									  <br/>
+										 <div id="resultdiv" class="alert alert-success">
+											<span id="resultspan" name="result"></span>
+										</div>
+									
+								</form>
+								<legend>Helpful Information.</legend>
+								<div id="help">
+									<p><span class="stitle"><strong>Helpful Information</strong></span>
+									  <table class="table table-striped">
+									    <tbody>
+									       <tr>
+										<td width="201"><p>Blank spaces in fields</p></td>
+										<td width="666">Blank spaces " " in fields are replaced with "_". <em>Example: "Happy hour week 35" will be encoded as "Happy_hour_week_35" in links and that is how it will look like in GA.</em>
+										</td>
+									      </tr>
+										<tr>
+										<td><p>Medium (utm_medium)</p></td>
+										<td> Required. Use <strong>Medium</strong> to identify a medium such as newsletter, banner or social media.<br>
+										  <em>Example</em>: display 
+										</td>
+									      </tr>									     
+									     <tr>
+										<td width="201"><p>Source (utm_source)</p></td>
+										<td width="666">Required. Use <strong>Source</strong> to identify the referring source; a search engine, newsletter name, or other source.<br>
+										  <em>Example</em>: aftonbladet.se 
+										</td>
+									      </tr>
+									     
+										<tr>
+										<td><p>Campaign (utm_campaign)</p></td>
+										<td> Required. Used for campaign analysis. Use <strong>Campaign </strong>to identify a specific product promotion or strategic campaign.<br>
+										  <em>Example</em>: spring sale 
+										</td>
+									      </tr>
+									      <tr>
+										<td><p>Content (utm_content)</p></td>
+										<td> Typically used to set the content description for that campaign ad. Use <strong>Content</strong> to differentiate ads or links that point to the same URL.<br>
+										<em>Example</em>: top banner
+										</td>
+									      </tr>
+									      <!--<tr>
+										<td><p>Campaign Term (utm_term)</p></td>
+										<td> Used for Search Engine Marketing (SEM), e.g. adWords. Use <strong>Terms</strong> to note the keywords for this ad.<br>
+										  <em>Example</em>:<font face="Courier New, Courier, mono">running+shoes</font> 
+										</td>
+									      </tr>-->
+									      <tr>
+										<td><p>Bookmarks</p></td>
+										<td>Save as bookmark to avoid setting market unit at every visit.<br/>
+											<a href="?mu=mu1.dk">mu1.dk</a><br>
+											<a href="?mu=mu2.fi">mu2.fi</a><br>
+											
+										</td>
+									      </tr>
+									
+									    </tbody>
+									  </table>
+									  </p>
+								</div>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		
+	
+<script language="javascript" type="text/javascript">
+
+var bitlyLoginArray = [];
+bitlyLoginArray["mu1.dk"] = "foobar";
+bitlyLoginArray["mu2.fi"] = "simonsays";
+
+var bitlyApiKeyArray = [];
+bitlyApiKeyArray["mu1.dk"] = "R_347d215624564947ffce51ddeab1c3fb";
+bitlyApiKeyArray["mu2.fi"] = "R_787d21562e184456ffce51ddeab1c3fb";
+
+
+var mediumArray = [];
+mediumArray["mu1.dk"] = {
+'social-media':'blog,facebook,googleplus,instagram,linkedin,pinterest,twitter,vine,youtube',
+'email':'newsletter,before departure,confirmation,questionnaire,site,watch,welcome home',
+'partnership':'COOP'
+};
+mediumArray["mu2.fi"] = {
+'social-media':'blog,facebook,googleplus,instagram,linkedin,pinterest,twitter,vine,youtube',
+'email':'newsletter,before departure,confirmation,questionnaire,site,watch,welcome home',
+};
+
+var api_login = "";
+var api_key = "";
+var api_url = 'api.bitly.com';
+var dataLayer = {};
+var mu = '';
+
+function gup( name ){  
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+	var regexS = "[\\?&]"+name+"=([^&#]*)";  
+	var regex = new RegExp( regexS );  
+	var results = regex.exec( window.location.href );  
+	if( results == null )    return "";  
+	else{
+		return results[1];
+	}
+}
+
+function setMU(){
+	mu = document.chosemu.mu.value; 
+	api_login = bitlyLoginArray[mu];
+	api_key = bitlyApiKeyArray[mu];
+	document.ctm.website.value = 'http://www.' + mu + '/';
+	dataLayer = mediumArray[mu];
+}
+
+var bmmu = gup('mu');
+if(bmmu.toString() && bmmu.toString() !== ""){
+	document.chosemu.mu.value = decodeURIComponent(bmmu);
+	setMU();
+}
+
+var bmurl = gup('url');
+
+if(bmurl.toString() && bmurl.toString() !== ""){
+	document.ctm.website.value = decodeURIComponent(bmurl);
+}
+
+function hideHelp(){
+	document.getElementById('help-mu').style.display = 'none';
+	document.getElementById('help-website').style.display = 'none';
+	document.getElementById('help-source').style.display = 'none';
+	document.getElementById('help-medium').style.display = 'none';
+	document.getElementById('help-campaign').style.display = 'none';
+	document.getElementById('help-content').style.display = 'none';
+	document.getElementById('resultdiv').style.display = 'none';
+	document.getElementById("testlinkbutton").className = 'btn btn-info disabled';
+	document.getElementById("copybutton").className = 'btn btn-info disabled';
+}
+
+hideHelp();
+$("#utm_source_select").hide();
+
+$("#utm_medium").change(function() {
+	var $dropdown = $(this);
+	var key = $dropdown.val();
+	var vals = [];
+	var dataLayerKeys = Object.keys(dataLayer);
+	
+	for (var i = 0; i < dataLayerKeys.length; i++) {
+		if(key == dataLayerKeys[i]){
+			//console.log(key);
+			vals = dataLayer[key].split(",");
+			$("#utm_source_text").hide();
+			$("#utm_source_text").attr('name','utm_source_hide');
+			$("#utm_source_select").show();
+			$("#utm_source_select").attr('name','utm_source');
+			
+			$("#utm_source_select").empty();
+			$.each(vals, function(index, value) {
+				$("#utm_source_select").append("<option>" + value + "</option>");
+			});
+			break;
+		}
+		else{
+			$("#utm_source_text").show();
+			$("#utm_source_text").attr('name','utm_source');
+			$("#utm_source_select").hide();
+			$("#utm_source_select").attr('name','utm_source_hide');
+		}
+		
+	
+	}
+});
+
+         
+function shorten(url, callback) {
+	if(!api_key || !api_login || !api_url) { 
+	//console.log("returning... not yet initialized"); 
+	return; } 
+	if(!url || !callback) { throw "Attempt to call shorten without a url or a callback function"; }
+	$.getJSON("http://"+api_url+"/v3/shorten?longUrl="+encodeURIComponent(url)+"&login="+api_login+"&apiKey="+api_key+"&callback=?", callback);
+}
+
+function createURL(shortenUrl) {
+	var form = document.ctm;
+	var myurl = "";
+	var anchor = "";
+	var error = false;
+	hideHelp();
+	
+	if (!document.getElementById('mu').value || !document.getElementById('mu').value === "") {
+		document.getElementById('mu').style.display = '';
+		document.getElementById('mu').focus();
+		error = true;
+	}
+	
+	if (!form){
+		return;
+	}
+	if (!form.website.value || form.website.value === "") {
+		document.getElementById('help-website').style.display = '';
+		form.website.focus();
+		error = true;
+	}
+	
+	
+	if (!form.utm_source.value || form.utm_source.value === "") {
+		document.getElementById('help-source').style.display = '';
+		form.utm_source.focus();
+		error = true;
+	}
+	if (!form.utm_medium.value || form.utm_medium.value === "") {
+		document.getElementById('help-medium').style.display = '';
+		form.utm_medium.focus();
+		error = true;
+	}
+	if (!form.utm_campaign.value || form.utm_campaign.value === "") {
+		document.getElementById('help-campaign').style.display = '';
+		form.utm_campaign.focus();
+		error = true;
+	}
+	if (form.website.value && form.website.value != ""){
+		if (form.website.value.indexOf("#") > 0) {
+				anchor = form.website.value.substring(form.website.value.indexOf("#",9), form.website.length);
+				form.website.value = form.website.value.substring(0,form.website.value.indexOf("#",9));
+		}
+		
+		if (form.website.value.indexOf("http") != 0) {
+			form.website.value = "http://"+form.website.value;
+		}
+		if (form.website.value.indexOf("/",9) < 0 && form.website.value.indexOf("?") == -1 ) {
+			form.website.value += "/";
+		}
+		if (form.website.value.indexOf("/",9) > -1 && form.website.value.indexOf("?") == -1 ) {
+			myurl += form.website.value+"?";
+		}
+		else {
+			myurl += form.website.value+"&";
+		}
+		
+		if(anchor != ""){
+			form.website.value += anchor;
+		}
+	}
+	if (form.utm_source.value && form.utm_source.value !== "") {
+		if (form.utm_source.value && form.utm_source.value !== ""){
+			myurl += "utm_source="+removeSpaces(form.utm_source.value).toLowerCase();
+		}
+		if (form.utm_medium.value && form.utm_medium.value !== "") {
+			myurl += "&utm_medium="+removeSpaces(form.utm_medium.value).toLowerCase();
+		}
+		if (form.utm_term.value && form.utm_term.value !== "") {
+			myurl +="&utm_term="+removeSpaces(form.utm_term.value).toLowerCase();
+		}
+		if (form.utm_content.value && form.utm_content.value !== "") {
+			myurl +="&utm_content="+removeSpaces(form.utm_content.value).toLowerCase();
+		}
+		if (form.utm_campaign.value && form.utm_campaign.value !== "") {
+			myurl += "&utm_campaign="+removeSpaces(form.utm_campaign.value).toLowerCase();
+		}
+		myurl += anchor; 
+		
+		document.getElementById('resultspan').innerHTML =  myurl;
+		
+	
+		if(!error){
+			document.getElementById('resultdiv').style.display = '';
+			document.getElementById("testlinkbutton").className = 'btn btn-info';
+			document.getElementById('testlinkbutton').onclick = function() { window.open(myurl); };
+			document.getElementById("copybutton").className = 'btn btn-info';
+			document.getElementById('copybutton').onclick = function() { copyToClipboard(document.getElementById('resultspan').innerText); };
+		}
+		else{
+			document.getElementById('resultdiv').style.display = 'none';
+			document.getElementById("testlinkbutton").className = 'btn btn-info disabled';
+			document.getElementById('testlinkbutton').onclick = function() {};
+			document.getElementById("copybutton").className = 'btn btn-info disabled';
+			document.getElementById('copybutton').onclick = function() { copyToClipboard(document.getElementById('resultspan').innerText); };
+		}
+
+		if(shortenUrl == true){
+			var myLongUrl = userurl + myurl;
+			shorten(myLongUrl, function(response) { document.getElementById('resultspan').innerHTML = response.data.url;}); //JSON.stringify(response.data.url); });
+		}
+		
+	}
+	return 0;
+}
+	
+function clearURL() {
+	var form = document.ctm;
+	if (!form){
+		return;
+	}
+	form.website.value = "";
+	form.user.value = "";
+	form.utm_source.value = "";
+	form.utm_medium.value = "";
+	form.utm_campaign.value = "";
+	form.utm_content.value = "";
+	form.utm_term.value = "";
+	hideHelp();
+	return 0;
+}
+
+function removeSpaces(value) {
+	/*if(value.indexOf(' ')>0){
+		value = value.replace(/\s/g,'_');
+	}*/
+	//return encodeURIComponent(value);
+	return encodeURI(value);
+}
+
+function copyToClipboard(s) {
+    if (window.clipboardData && clipboardData.setData) {
+        clipboardData.setData('text', s);
+    }
+}
+
+function showHideTerms(dropdown, htmlID){
+	var myindex  = dropdown.selectedIndex
+	var SelValue = dropdown.options[myindex].value
+	if(SelValue == "SEM"){
+		document.getElementById(htmlID).style.display = ''
+	}
+	else{
+		document.getElementById(htmlID).style.display = 'none'
+	}
+}
+
+$( "#mu" ).change(function() {
+  setMU();
+});
+
+$( ".ctm" ).submit(function() {
+  createURL(); 
+  return false;
+});
+
+$( "#generateurl" ).click(function() {
+  createURL(false);
+});
+
+$( "#shorturl" ).click(function() {
+  createURL(true);
+});
+
+$( "#clearform" ).click(function() {
+  clearURL(true);
+});
+
+</script>
+
+
+</body>
+</html>
